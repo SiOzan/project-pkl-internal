@@ -75,7 +75,7 @@ class GuruController extends Controller
      */
     public function show(Guru $guru)
     {
-        return view('guru.show');
+        return view('guru.show', compact('guru'));
     }
 
     /**
@@ -86,7 +86,7 @@ class GuruController extends Controller
      */
     public function edit(Guru $guru)
     {
-        $guru = Guru::findOrFail($id);
+        $guru = Guru::findOrFail($guru->id);
         $mapel = Mapel::all();
         return view('guru.edit', compact('guru', 'mapel'));
     }
@@ -110,6 +110,7 @@ class GuruController extends Controller
             // 'foto' => 'required|max:2048|mimes:png,jpg',
         ]);
 
+        $guru = Guru::findOrFail($guru->id);
         $guru->nama = $request->nama;
         $guru->nip = $request->nip;
         $guru->jenis_kelamin = $request->jenis_kelamin;

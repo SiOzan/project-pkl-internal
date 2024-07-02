@@ -20,22 +20,26 @@
                     @foreach ($guru as $data)
                         <tr>
                             <td>{{$loop->index+1}}</td>
-                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$data->nama}}</strong></td>
+                            <td><strong>{{$data->nama}}</strong></td>
                             <td>{{$data->mapel->nama_pelajaran}}</td>
                             <td>
-                                <img src="{{ asset('images/foto/'. $data->foto) }}" alt="Avatar" class="rounded-circle">
+                                <img src="{{ asset('images/foto/'. $data->foto) }}" alt="Avatar" class="rounded-circle" style="width: 100px;">
                             </td>
                             <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
-                                            Edit</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
-                                            Delete</a>
+                                <form action="{{route('guru.destroy', $data->id)}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                    <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{{ route('guru.show', $data->id) }}"><i class="bx bx-show-alt me-1"></i>Lihat</a>
+                                            <a class="dropdown-item" href="{{ route('guru.edit', $data->id) }}"><i class="bx bx-edit-alt me-1"></i>Edit</a>
+                                            <button type="submit" class="dropdown-item" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="bx bx-trash me-1"></i>Hapus</button>
+                                        </div>
                                     </div>
+                                </form>
                                 </div>
                             </td>
                         </tr>

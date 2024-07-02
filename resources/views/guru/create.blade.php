@@ -5,7 +5,7 @@
         <div class="col-xxl">
             <div class="card mb-4">
                 <div class="card-header d-flex align-items-center justify-content-between">
-                    <h5 class="mb-0">Basic Layout</h5>
+                    <h5 class="mb-0">Menambahakan Data Guru</h5>
                     <a type="button" href="{{route('guru.index')}}" class="btn rounded-pill btn-success float-end">Kembali</a>
                 </div>
                 <div class="card-body">

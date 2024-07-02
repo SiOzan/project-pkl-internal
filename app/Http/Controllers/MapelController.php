@@ -55,7 +55,7 @@ class MapelController extends Controller
      */
     public function show(Mapel $mapel)
     {
-        return view('user.show');
+        return view('mapel.show', compact('mapel'));
     }
 
     /**
