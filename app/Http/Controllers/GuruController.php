@@ -40,11 +40,11 @@ class GuruController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required',
-            'nip' => 'required|numeric',
+            'nip' => 'required',
             'jenis_kelamin' => 'required',
             'tanggal_lahir' => 'required',
             'id_mapel' => 'required',
-            'mengajar_sejak' => 'required|numeric',
+            'mengajar_sejak' => 'required',
             'foto' => 'required|max:2048|mimes:png,jpg',
         ]);
 

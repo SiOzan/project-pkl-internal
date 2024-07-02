@@ -11,11 +11,7 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>NIP</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Tanggal Lahir</th>
                         <th>Mata Pelajaran</th>
-                        <th>Mengajar Sejak</th>
                         <th>Foto</th>
                         <th>Aksi</th>
                     </tr>
@@ -25,11 +21,7 @@
                         <tr>
                             <td>{{$loop->index+1}}</td>
                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$data->nama}}</strong></td>
-                            <td><span class="badge bg-label-primary me-1">{{$data->nip}}</span></td>
-                            <td><span class="badge bg-label-primary me-1">{{$data->jenis_kelamin}}</span></td>
-                            <td><span class="badge bg-label-primary me-1">{{$data->tanggal_lahir}}</span></td>
-                            <td><span class="badge bg-label-primary me-1">{{$data->mapel->nama_pelajaran}}</span></td>
-                            <td><span class="badge bg-label-primary me-1">{{$data->mengajar_sejak}}</span></td>
+                            <td>{{$data->mapel->nama_pelajaran}}</td>
                             <td>
                                 <img src="{{ asset('images/foto/'. $data->foto) }}" alt="Avatar" class="rounded-circle">
                             </td>

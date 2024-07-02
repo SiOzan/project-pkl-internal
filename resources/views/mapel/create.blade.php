@@ -14,7 +14,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-name">Nama Pelajaran</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="basic-default-name" @error('nama_pelajaran') is-invalid @enderror" name="nama_pelajaran">
+                                    <input type="text" class="form-control" id="basic-default-name" @error('nama_pelajaran') is-invalid @enderror" name="nama_pelajaran" required>
                                 </div>
                                 @error('nama_pelajaran')
                                     <span class="invalid-feedback" role="alert">

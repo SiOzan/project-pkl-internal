@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('gurus', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->integer('nip');
+            $table->bigInteger('nip');
             $table->string('jenis_kelamin');
             $table->date('tanggal_lahir');
-            $table->foreignId('id_mapel')->constrained('mapels')->oneDelete('cascade')->unique();
-            $table->string('mengajar_sejak');
+            $table->foreignId('id_mapel')->constrained('mapels')->oneDelete('cascade');
+            $table->integer('mengajar_sejak');
             $table->string('foto');
             $table->timestamps();
         });
