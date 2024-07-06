@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mapel;
+use Alert;
 use Illuminate\Http\Request;
+use App\Http\Middleware\IsAdmin;
 
 class MapelController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', IsAdmin::class]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +21,7 @@ class MapelController extends Controller
     public function index()
     {
         $mapel = Mapel::latest()->get();
+        confirmDelete('Hapus!', 'Anda yakin ingin menghapusnya?');
         return view('mapel.index', compact('mapel'));
     }
 
@@ -44,7 +51,8 @@ class MapelController extends Controller
         $mapel->nama_pelajaran = $request->nama_pelajaran;
         $mapel->save();
 
-        return redirect()->route('mapel.index')->with('success', 'data berhasil ditambahkan');
+        Alert::success('Success', 'data berhasil ditambahkan')->autoclose(1000);
+        return redirect()->route('mapel.index');
     }
 
     /**
@@ -86,7 +94,8 @@ class MapelController extends Controller
         $mapel->nama_pelajaran = $request->nama_pelajaran;
         $mapel->save();
 
-        return redirect()->route('mapel.index')->with('success', 'data berhasil diperbarui');
+        Alert::success('Success', 'data berhasil diperbarui')->autoclose(1000);
+        return redirect()->route('mapel.index');
     }
 
     /**
@@ -100,6 +109,7 @@ class MapelController extends Controller
         $mapel = Mapel::findOrFail($mapel->id);
         $mapel->delete();
 
-        return redirect()->route('mapel.index')->with('success', 'data berhasil dihapus!');
+        Alert::success('Success', 'data berhasil dihapus!')->autoclose(1000);
+        return redirect()->route('mapel.index');
     }
 }

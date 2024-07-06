@@ -14,7 +14,15 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    @if (Auth::user()->is_admin == 'admin')
+                        Login Sebagai Admin
+                    @elseif(Auth::user()->is_admin == 'atasan')
+                        Login Sebagai Atasan
+                    @elseif(Auth::user()->is_admin == 'guru')
+                        Login Sebagai Guru
+                    @elseif(Auth::user()->is_admin == 'siswa')
+                        Login Sebagai Siswa
+                    @endif
                 </div>
             </div>
         </div>

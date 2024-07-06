@@ -5,7 +5,7 @@
             <div class="col-xxl">
                 <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="mb-0">Menambahkan Mata Pelajaran</h5>
+                        <h5 class="mb-0">Mengubah Mata Pelajaran</h5>
                         <a type="button" href="{{route('mapel.index')}}" class="btn rounded-pill btn-success float-end">Kembali</a>
                     </div>
                     <div class="card-body">
@@ -25,7 +25,7 @@
                             </div>
                             <div class="row justify-content-end">
                                 <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary">Tambah</button>
+                                    <button type="submit" class="btn btn-primary">Ubah</button>
                                 </div>
                             </div>
                         </form>

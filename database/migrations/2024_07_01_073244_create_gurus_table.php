@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('gurus', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->bigInteger('nip');
+            $table->bigInteger('nip')->unique();
             $table->string('jenis_kelamin');
             $table->date('tanggal_lahir');
             $table->foreignId('id_mapel')->constrained('mapels')->oneDelete('cascade');

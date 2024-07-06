@@ -38,7 +38,7 @@
                             <label class="col-sm-2 col-form-label" for="basic-default-company">Jenis Kelamin</label>
                             <div class="col-sm-10">
                                 <select id="defaultSelect" class="form-select" @error('jenis_kelamin') is-invalid @enderror" name="jenis_kelamin" value="{{ $guru->jenis_kelamin }}">
-                                    <option value="{{$guru->id}}" {{ $guru->id == $guru->jenis_kelamin ? 'selected' : '' }}>{{$guru->jenis_kelamin}}</option>
+                                    <option value="{{$guru->jenis_kelamin}}">{{$guru->jenis_kelamin}}</option>
                                     <option value="Laki-laki">laki-laki</option>
                                     <option value="Perempuan">Perempuan</option>
                                 </select>

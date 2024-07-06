@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Guru;
 use App\Models\Mapel;
+use Alert;
 use Illuminate\Http\Request;
+use App\Http\Middleware\IsAdmin;
 
 class GuruController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', IsAdmin::class]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +22,8 @@ class GuruController extends Controller
     public function index()
     {
         $guru = Guru::latest()->get();
+        // $mapel = Mapel::get('nama_pelajaran');
+        confirmDelete('Hapus!', 'Anda yakin ingin menghapusnya?');
         return view('guru.index', compact('guru'));
     }
 
@@ -40,7 +48,7 @@ class GuruController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required',
-            'nip' => 'required',
+            'nip' => 'required|unique:gurus',
             'jenis_kelamin' => 'required',
             'tanggal_lahir' => 'required',
             'id_mapel' => 'required',
@@ -64,7 +72,8 @@ class GuruController extends Controller
         }
         $guru->save();
 
-        return redirect()->route('guru.index')->with('success', 'data berhasil ditambahkan');
+        Alert::success('Success', 'data berhasil ditambahkan')->autoclose(1000);
+        return redirect()->route('guru.index');
     }
 
     /**
@@ -126,7 +135,8 @@ class GuruController extends Controller
         }
         $guru->save();
 
-        return redirect()->route('guru.index')->with('success', 'data berhasil diperbarui');
+        Alert::success('Success', 'data berhasil diperbarui')->autoclose(1000);
+        return redirect()->route('guru.index');
     }
 
     /**
@@ -141,6 +151,7 @@ class GuruController extends Controller
         $guru->deleteImage();
         $guru->delete();
 
-        return redirect()->route('guru.index')->with('success', 'data berhasil dihapus!');
+        Alert::success('Success', 'data berhasil dihapus!')->autoclose(1000);
+        return redirect()->route('guru.index');
     }
 }

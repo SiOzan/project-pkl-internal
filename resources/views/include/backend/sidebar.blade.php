@@ -60,87 +60,74 @@
         <li class="menu-item">
             <a href="{{ route('home') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div>Dashboard</div>
+                <div>Beranda</div>
             </a>
         </li>
 
         <!-- Layouts -->
         <li class="menu-item">
-            <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-box"></i>
-                <div>Guru & Mapel</div>
+            <a href="{{ route('user.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-support"></i>
+                <div>Hak Akses</div>
+            </a>
+        </li>
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Guru &amp; Mata Pelajaran</span>
+        </li>
+        <li class="menu-item">
+            <a href="{{ route('guru.index') }}" class="menu-link">
+                <div>Data Guru</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="{{ route('mapel.index') }}" class="menu-link">
+                <div>Mata Pelajaran</div>
+            </a>
+        </li>
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Pertanyaan &amp; Kompetensi</span>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div>Pertanyaan</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{route('guru.index')}}" class="menu-link">
-                        <div>Data Guru</div>
+                    <a href="{{ route('pertanyaanAtasan.index') }}" class="menu-link">
+                        <div>Pertanyaan Atasan</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('mapel.index') }}" class="menu-link">
-                        <div>Mata Pelajaran</div>
+                    <a href="{{ route('pertanyaanGuru.index') }}" class="menu-link">
+                        <div>Pertanyaan Guru</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('pertanyaanSiswa.index') }}" class="menu-link">
+                        <div>Pertanyaan Siswa</div>
                     </a>
                 </li>
             </ul>
         </li>
         <li class="menu-item">
-            <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons bx bx-support"></i>
-                <div>Hak Akses</div>
-            </a>
-        </li>
-        <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div>Pertanyaan</div>
+                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                <div>Kompetensi</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                        <div>Kompetensi</div>
+                    <a href="{{ route('kompetensiAtasan.index') }}" class="menu-link">
+                        <div>Kompetensi Atasan</div>
                     </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="pages-misc-error.html" class="menu-link">
-                                <div>Kompetensi Atasan</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="pages-misc-under-maintenance.html" class="menu-link">
-                                <div>Kompetensi Guru</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="pages-misc-under-maintenance.html" class="menu-link">
-                                <div>Kompetensi Siswa</div>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                        <div>Pertanyaan</div>
+                    <a href="{{ route('kompetensiGuru.index') }}" class="menu-link">
+                        <div>Kompetensi Guru</div>
                     </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="pages-account-settings-account.html" class="menu-link">
-                                <div>Pertanyaan Atasan</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="pages-account-settings-notifications.html" class="menu-link">
-                                <div>Pertanyaan Guru</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="pages-account-settings-connections.html" class="menu-link">
-                                <div>Pertanyaan Siswa</div>
-                            </a>
-                        </li>
-                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ route('kompetensiSiswa.index') }}" class="menu-link">
+                        <div>Kompetensi Siswa</div>
+                    </a>
                 </li>
             </ul>
         </li>
