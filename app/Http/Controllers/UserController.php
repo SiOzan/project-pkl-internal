@@ -62,7 +62,7 @@ class UserController extends Controller
         $user->is_admin = $request->is_admin;
         $user->save();
 
-        // Alert::success('Success', 'data berhasil ditambahkan')->autoclose(1000);
+        Alert::success('Success', 'data berhasil ditambahkan')->autoclose(1000);
         return redirect()->route('user.index');
     }
 
@@ -124,10 +124,11 @@ class UserController extends Controller
     {
         if (Auth::user()->id != $user->id) {
             $user->delete();
+            Alert::success('Success', 'data berhasil dihapus!')->autoclose(1000);
             return redirect()->route('user.index');
         }
 
-        Alert::success('Success', 'data berhasil dihapus!')->autoclose(1000);
+        Alert::warning('Peringatan!', 'Tidak dapat menghapus akun yang sedang digunakan');
         return redirect()->route('user.index');
     }
 }

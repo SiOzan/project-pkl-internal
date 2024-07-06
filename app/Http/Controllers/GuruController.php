@@ -22,7 +22,6 @@ class GuruController extends Controller
     public function index()
     {
         $guru = Guru::latest()->get();
-        // $mapel = Mapel::get('nama_pelajaran');
         confirmDelete('Hapus!', 'Anda yakin ingin menghapusnya?');
         return view('guru.index', compact('guru'));
     }

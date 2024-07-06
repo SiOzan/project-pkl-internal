@@ -27,7 +27,7 @@
                             <td>{{ $loop->index + 1 }}</td>
                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i><strong>{{ $data->name }}</strong></td>
                             <td>{{ $data->email }}</td>
-                            <td>{{ $data->is_admin}}</td>
+                            <td><span class="badge bg-label-warning me-1">{{ $data->is_admin}}</span></td>
                             <td>
                                 <form action="{{ route('user.destroy', $data->id) }}" method="POST">
                                     @method('DELETE')
