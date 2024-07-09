@@ -13,6 +13,9 @@ class Guru extends Model
     public $villable = ['nama', 'nip', 'jenis_kelamin', 'tanggal_lahir', 'id_mapel', 'mengajar_sejak', 'foto'];
     public $timestamps = true;
 
+    public function penilaianGuru(){
+        return $this->hasMany(PenilaianGuru::class, 'id_guru');
+    }
     public function mapel(){
         return $this->belongsTo(Mapel::class, 'id_mapel');
     }

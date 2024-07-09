@@ -72,7 +72,7 @@
                             <td><strong>{{$data->nama}}</strong></td>
                             <td>{{$data->mapel->nama_pelajaran}}</td>
                             <td>
-                                <img src="{{ asset('images/foto/'. $data->foto) }}" alt="Avatar" class="rounded-circle" style="width: 50px; height: 70px;">
+                                <img src="{{ asset('images/foto/'. $data->foto) }}" alt="Avatar" class="rounded-circle" style="width: 55px; height: 60px;">
                             </td>
                             <td>
                                 <form action="{{route('guru.destroy', $data->id)}}" method="POST">

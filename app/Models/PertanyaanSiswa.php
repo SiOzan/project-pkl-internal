@@ -16,4 +16,8 @@ class PertanyaanSiswa extends Model
     public function kompetensiSiswa(){
         return $this->belongsTo(KompetensiSiswa::class, 'id_kompetensi');
     }
+
+    public function penilaianGuru(){
+        return $this->hasMany(PenilaianGuru::class, 'id_pertanyaanSiswa');
+    }
 }
