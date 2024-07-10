@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -129,4 +129,60 @@
             </div>
         </div>
     </body>
-</html>
+</html> --}}
+@extends('layouts.frontend')
+@section('content')
+<section class="home_banner_area">
+    <div class="banner_inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="banner_content">
+                        <h3 class="text-uppercase">Halo 😃</h3>
+                        <h5 class="text-uppercase">Selamat datang di website</h5>
+                        <h1 class="text-uppercase">PENILAIAN KINERJA GURU</h1>
+                        <div class="d-flex align-items-center">
+                            <a class="primary_btn" href="{{route('login')}}"><span>Mulai</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="home_right_img">
+                        <img class="" src="{{ asset('frontend/img/banner/home-right.png') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about_area section_gap">
+    <div class="container">
+        <div class="row justify-content-start align-items-center">
+            <div class="col-lg-5">
+                <div class="about_img">
+                    <img class="" src="{{asset('frontend/img/about-us.png')}}" alt="">
+                </div>
+            </div>
+
+            <div class="offset-lg-1 col-lg-5">
+                <div class="main_title text-left">
+                    <p>
+                        Selamat datang dalam proses penilaian kinerja guru. Mohon luangkan waktu Anda untuk memberikan penilaian yang jujur dan obyektif terhadap kinerja guru yang bersangkutan. Tanggapan Anda sangat berharga bagi peningkatan mutu pendidikan di sekolah ini.
+                    </p>
+                    <h2>
+                        Instruksi
+                    </h2>
+                    <p>
+                        1. Bacalah setiap pertanyaan dengan seksama. <br>
+                        2. Berikan penilaian Anda berdasarkan pengalaman dan observasi Anda secara langsung. <br>
+                        3. Pastikan untuk memberikan jawaban yang benar dari penilaian Anda. <br>
+                        4. Isilah semua bagian yang diperlukan dengan cermat. <br>
+                    </p>
+                    {{-- <a class="primary_btn" href="#" style="transition: .5s;"><span>Download CV</span></a> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@endsection

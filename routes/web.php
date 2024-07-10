@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\UserController;
@@ -26,8 +27,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('ada', function () {
-    return view('layouts.backend');
+Route::get('/penilaian', function () {
+    return view('penilaian');
 });
 
 Auth::routes();
@@ -35,6 +36,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+    Route::resource('dashboard', Admincontroller::class);
     Route::resource('mapel', Mapelcontroller::class);
     Route::resource('guru', Gurucontroller::class);
     Route::resource('user', Usercontroller::class);

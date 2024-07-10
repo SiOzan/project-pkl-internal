@@ -5,6 +5,10 @@
 @endsection
 
 @section('content')
+    {{-- @if ()
+
+    @endif --}}
+
     <div class="card">
         <div class="card-header d-flex align-items-center justify-content-between">
             <h5>Hak Akses Pengguna</h5>
@@ -27,7 +31,17 @@
                             <td>{{ $loop->index + 1 }}</td>
                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i><strong>{{ $data->name }}</strong></td>
                             <td>{{ $data->email }}</td>
-                            <td><span class="badge bg-label-warning me-1">{{ $data->is_admin}}</span></td>
+                            <td>
+                                @if ($data->is_admin == 'admin')
+                                <span class="badge bg-label-warning me-1">{{ $data->is_admin}}</span>
+                                @elseif ($data->is_admin == 'atasan')
+                                <span class="badge bg-label-success me-1">{{ $data->is_admin}}</span>
+                                @elseif ($data->is_admin == 'guru')
+                                <span class="badge bg-label-info me-1">{{ $data->is_admin}}</span>
+                                @elseif ($data->is_admin == 'siswa')
+                                <span class="badge bg-label-primary me-1">{{ $data->is_admin}}</span>
+                                @endif
+                            </td>
                             <td>
                                 <form action="{{ route('user.destroy', $data->id) }}" method="POST">
                                     @method('DELETE')

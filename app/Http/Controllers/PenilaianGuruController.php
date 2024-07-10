@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\PenilaianGuru;
+use App\Models\PertanyaanAtasan;
+use App\Models\PertanyaanGuru;
+use App\Models\PertanyaanSiswa;
 use Illuminate\Http\Request;
 
 class PenilaianGuruController extends Controller
@@ -14,7 +17,7 @@ class PenilaianGuruController extends Controller
      */
     public function index()
     {
-        //
+        $penilaianGuru = PenilaianGuru::all();
     }
 
     /**

@@ -109,7 +109,6 @@
                 <!-- /Logo -->
                 <h4 class="mb-2">Selamat Datang 👋</h4>
                 <p class="mb-4">Masuk menggunakan akun yang sudah disediakan</p>
-                <p class="mb-4">Mulai dan jawabalah pertanyaan untuk menilai guru dengan jujur</p>
 
                 <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
                 @csrf
@@ -138,7 +137,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-primary d-grid w-100" type="submit">Mulai</button>
+                        <button class="btn btn-primary d-grid w-100" type="submit">Masuk</button>
                     </div>
                 </form>
                 </div>

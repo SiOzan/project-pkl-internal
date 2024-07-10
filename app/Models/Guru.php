@@ -22,7 +22,7 @@ class Guru extends Model
 
     // menghapus foto
     public function deleteImage(){
-        if ($this->cover && file_exists(public_path('images/foto/'. $this->foto))) {
+        if ($this->foto && file_exists(public_path('images/foto/'. $this->foto))) {
             return unlink(public_path('images/foto/'. $this->foto));
         }
     }
