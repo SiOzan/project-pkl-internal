@@ -4,24 +4,39 @@
         @include('include.frontend.header')
     </div>
 
-    <div class="container" >
+    <div class="container">
         <section class="newsletter_area">
             <div class="container">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-12">
                         <div class="subscription_box text-center">
-                            <h2 class="text-uppercase text-white">get update from anywhere</h2>
-                            <p class="text-white">
-                                Bearing Void gathering light light his eavening unto dont afraid.
-                            </p>
-                            <div class="subcribe-form" id="mc_embed_signup">
-                                <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
-                                    <input name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
-                                    <div style="position: absolute; left: -5000px;">
-                                        <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                                    </div>
-                                    <button class="primary-btn hover d-inline">Get Started</button>
-                                    <div class="info"></div>
+                            <div class="row col-5">
+                                <h4 class="fw-bold text-center mt-3"></h4>
+                                <form class="px-4" action="">
+                                    @foreach($nilai as $data)
+                                        <p class="fw-bold">{{$data->pertanyaanAtasan->pertanyaan}}</p>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="radio" name="exampleForm"
+                                                id="radioExample1" />
+                                                <label class="form-check-label" for="radioExample1">
+                                                    Option 1
+                                                </label>
+                                            </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="radio" name="exampleForm"
+                                                id="radioExample2" />
+                                                <label class="form-check-label" for="radioExample2">
+                                                Option 2
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="radio" name="exampleForm"
+                                                id="radioExample3" />
+                                            <label class="form-check-label" for="radioExample3">
+                                                Option 3
+                                            </label>
+                                        </div>
+                                    @endforeach
                                 </form>
                             </div>
                         </div>

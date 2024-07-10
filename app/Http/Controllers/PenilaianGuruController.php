@@ -17,7 +17,9 @@ class PenilaianGuruController extends Controller
      */
     public function index()
     {
-        $penilaianGuru = PenilaianGuru::all();
+        $nilai = PenilaianGuru::all();
+        // $pertanyaanAtasan = PertanyaanAtasan::all();
+        return view('penilaian', compact('nilai'));
     }
 
     /**
